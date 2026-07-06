@@ -49,7 +49,7 @@ export default function PaymentScreen() {
     if (selectedMethod === 'UPI') {
       try {
         const redirectUrl = Linking.createURL('/payment-callback');
-        const razorpayKey = 'rzp_live_T4wysiHzIDwFA1';
+        const razorpayKey = process.env.EXPO_PUBLIC_RAZORPAY_KEY || '';
         const amountStr = params.totalAmount || '0';
         const phoneStr = params.phone || '';
         
